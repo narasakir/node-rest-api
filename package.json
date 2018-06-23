@@ -4,6 +4,7 @@
   "description": "A Node.js restful API",
   "main": "index.js",
   "scripts": {
+    "start": "gulp nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -18,6 +19,8 @@
     "bcrypt": "^2.0.1",
     "body-parser": "^1.14.2",
     "express": "^4.13.4",
+    "express-jwt": "^3.4.0",
+    "jsonwebtoken": "^7.0.1",
     "mongoose": "^4.3.7"
   },
   "devDependencies": {
