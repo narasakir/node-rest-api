@@ -20,6 +20,8 @@
     "body-parser": "^1.14.2",
     "express": "^4.13.4",
     "express-jwt": "^3.4.0",
+    "express-validation": "^0.4.5",
+    "joi": "^7.2.3",
     "jsonwebtoken": "^7.0.1",
     "mongoose": "^4.3.7"
   },
