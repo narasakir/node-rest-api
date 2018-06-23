@@ -12,13 +12,19 @@ var _users = require('../controllers/users');
 
 var _users2 = _interopRequireDefault(_users);
 
+var _jwt = require('../../config/jwt');
+
+var _jwt2 = _interopRequireDefault(_jwt);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var router = _express2.default.Router();
 
 router.route('/')
 /** GET /api/users - Get list of users */
-.get(_users2.default.list)
+.get(_jwt2.default, _users2.default.list);
+
+router.route('/')
 
 /** POST /api/users - Create new user */
 .post(_users2.default.create);
