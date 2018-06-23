@@ -13,5 +13,17 @@
     "es6"
   ],
   "author": "Raphael Narasaki",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4"
+  },
+  "devDependencies": {
+    "babel-core": "^6.9.1",
+    "babel-preset-es2015": "^6.5.0",
+    "babel-preset-stage-2": "^6.5.0",
+    "gulp": "^3.9.0",
+    "gulp-babel": "^6.1.2",
+    "gulp-load-plugins": "^1.2.0",
+    "gulp-nodemon": "^2.0.6"
+  }
 }
