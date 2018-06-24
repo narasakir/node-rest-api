@@ -8,9 +8,17 @@ var _express = require('express');
 
 var _express2 = _interopRequireDefault(_express);
 
+var _expressValidation = require('express-validation');
+
+var _expressValidation2 = _interopRequireDefault(_expressValidation);
+
 var _tasks = require('../controllers/tasks');
 
 var _tasks2 = _interopRequireDefault(_tasks);
+
+var _tasks3 = require('./validation/tasks');
+
+var _tasks4 = _interopRequireDefault(_tasks3);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -21,19 +29,20 @@ router.route('/')
 .get(_tasks2.default.list)
 
 /** POST /api/tasks - Create new task */
-.post(_tasks2.default.create);
+.post((0, _expressValidation2.default)(_tasks4.default.createTask), _tasks2.default.create);
 
 router.route('/:taskId')
 /** GET /api/tasks/:taskId - Get task */
 .get(_tasks2.default.get)
 
 /** PUT /api/tasks/:taskId - Update task */
-.put(_tasks2.default.update)
+.put((0, _expressValidation2.default)(_tasks4.default.updateTask), _tasks2.default.update)
 
 /** DELETE /api/tasks/:taskId - Delete task */
 .delete(_tasks2.default.remove);
 
 /** Load task when API with taskId route parameter is hit */
+router.param('taskId', (0, _expressValidation2.default)(_tasks4.default.getTask));
 router.param('taskId', _tasks2.default.load);
 
 exports.default = router;
